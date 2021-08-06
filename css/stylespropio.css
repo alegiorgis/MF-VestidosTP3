@@ -1,0 +1,242 @@
+/* ENCABEZADO DE PAGINA EN INDEX */
+
+#home{
+
+  height: 100vh;
+  min-height: 500px;
+  background: url(../assets/img/home-bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-repeat: no-repeat;    
+  background-position: center top;
+}
+
+h2{
+orphans: 3;
+widows: 3;
+}
+
+h2{
+page-break-after: avoid;
+}
+
+@page {
+size: a3;
+}
+
+#home .home__inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;    
+  }
+  
+  #home .home__inicio--contenido{
+    width: 100%;
+    color: #fff;
+  }
+  
+  #home .home__inicio--contenido h1{
+    font-size: 60px;
+    margin-bottom: 60px;
+  }
+  
+/* Para Animar el texto en medio de imagen*/
+  
+  #home .home__inicio--contenido h2::after{
+    content: "Puedes probarte mil vestidos, pero solo uno te impresionara";
+    animation: textanim 10s linear infinite;    
+  }
+  
+  @keyframes textanim{
+    25%{
+        content: "Vestimos tus sueños";
+    }
+  
+    50%{
+        content: "Vestidos de novia a medida & alta costura";
+        }
+    75%{
+            content: "Complementos de Novias";
+        }        
+  }
+  
+  
+/* SECCION VESTIDOS*/
+  /* Uso de GRIDS*/
+  
+  .gallery-novias {
+    display: grid;
+    /* Creo un grid de 3 columnas y que c/u tenga el mismo ancho*/
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 550px;
+    padding: 20px; 
+    grid-gap: 10px;
+  }
+  
+  .gallery__img {
+    width: 100%;
+    height: 100%;
+    /*La imagen ocupa el ancho especificado pero no se distorsiona (cover)*/
+    object-fit: cover;
+  }
+  
+  /*La imagen Nº4 va a ocupar 2 columnas*/
+  .gallery__agregado:nth-child(4) {
+    grid-column-start: span 2;
+  }
+  
+  /*La imagen Nº5 va a ocupar 2 filas*/
+  .gallery__agregado:nth-child(5) {
+    grid-row-start: span 2;
+  }
+  
+  /*La imagen Nº9 va a ocupar 2 columnas*/
+  .gallery__agregado:nth-child(9) {
+    grid-column-start: span 2;
+  }  
+  
+
+/* SECCION TESTIMONIOS*/
+  .contenedor {
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .contenedor__cards {
+    margin: 20px 0;
+  }
+  
+  .card__index {
+    background-size: cover;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .card__thumbnail {
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .card__img {
+    max-width: 200px;
+    max-height: 250px;
+    width: 100%;
+  }
+  
+  .card__titulo {
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-family: "Mate SC", serif;
+  }
+  
+  .card__titulo:hover {
+    text-decoration: underline;
+  }
+  
+  .card__enlace {
+    color: #000;
+  }
+  
+  .card__extracto {
+    line-height: 1, 5;
+    color: #6D6D6D;
+    margin-bottom: 20px;
+  }
+  
+  .cuadro {
+    max-width: 95%;
+    margin: 5% 10%;
+    border-radius: 15px;
+    padding: auto;
+    display: flex;
+    background: #e3c0e4;
+    border: 2px solid #280538;
+  }
+  
+  .cuadro__texto {
+    color: #3f3c3c;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+    line-height: 1, 5;
+  }
+  
+  .contornogral img:hover {
+    transform: scale(1.2, 1.2);
+    transition: 2s;
+  }
+  
+  .card__img2 {
+    max-width: 200px;
+    max-height: 250px;
+    width: 100%;
+  }
+  
+  .contornogral {
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+    background-image: radial-gradient(circle, #d3c8c8, #b590b9);
+    border: 2px groove white;
+  }
+  
+  .row {
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 2rem;
+    border-radius: 15px;
+  }
+  
+  .card img {
+    border-radius: 15px;
+    padding-top: 5%;
+  }
+  
+  .card-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "Mate SC", serif;
+  }
+  
+/*BOTON PARA VOLVER ARRIBA*/
+  #topBtn{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+  }
+  
+/*FOOTER*/
+/*CAMBIA COLOR EN LETRA*/
+  .text-muted2 {
+    color: #d7dbdf !important;
+  }
+
+/*GRADIENTE DE COLOR*/
+  .border-top {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%);
+  }
